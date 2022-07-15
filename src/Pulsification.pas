@@ -324,9 +324,9 @@ begin
   
   if layer > 10 then
   begin
-	textcolor(red);
+    textcolor(red);
     writeln('Maximum layers is 10! Try again!');
-	readln;
+    readln;
     warnfx;
     readln;
     tuplet;
@@ -334,9 +334,9 @@ begin
   
   else if layer < 1 then
   begin
-	textcolor(red);
+    textcolor(red);
     writeln('Ratio can not be 0 nor negative! Try again!');
-	readln;
+    readln;
     warnfx;
     readln;
     tuplet;
@@ -346,37 +346,37 @@ begin
   begin
     for i := 1 to layer do
     begin
-	  beep2;
-	  write('> Ratio (a) in layer ',i,'     : ');
-	  read(a[i]);
-	  beep2;
-	  write('> Ratio (b) in layer ',i,'     : ');
-	  read(b[i]);
-	end;
-
-	beep2;
-	write('> Kind of note (1/x)       : ');
-	read(note);
-	beep2;
-	write('> Tempo                    : ');
-	read(tempo1);
-	ratio := 1;
-
-	for i := 1 to layer do
-	begin
-	  ratio := ratio * (a[i] / b[i]);
-	end;
-
-	tempo2 := ratio * (note / 4) * tempo1;
-
-	textcolor(blue);
-	writeln;
-	writeln('Result');
-	writeln('======');
-	writeln;
-	textcolor(black);
-	writeln('> New Tempo (1/4 note)     : ',tempo2: 0: temdec,' BPM');
-	readln;
+      beep2;
+      write('> Ratio (a) in layer ',i,'     : ');
+      read(a[i]);
+      beep2;
+      write('> Ratio (b) in layer ',i,'     : ');
+      read(b[i]);	
+    end;
+    
+    beep2;
+    write('> Kind of note (1/x)       : ');
+    read(note);
+    beep2;
+    write('> Tempo                    : ');
+    read(tempo1);
+    ratio := 1;
+    
+    for i := 1 to layer do
+    begin
+      ratio := ratio * (a[i] / b[i]);
+    end;
+    
+    tempo2 := ratio * (note / 4) * tempo1;
+    
+    textcolor(blue);
+    writeln;
+    writeln('Result');
+    writeln('======');
+    writeln;
+    textcolor(black);
+    writeln('> New Tempo (1/4 note)     : ',tempo2: 0: temdec,' BPM');
+    readln;
   end;
 end;
 
@@ -401,20 +401,20 @@ begin
 
   case opt of
     '1' :
-	begin
+    begin
       beep2;
       convert;
       resultfx;
-	  readln;
+      readln;
       mainmenu;
     end;
 
-	'2' :
-	begin
+    '2' :
+    begin
       beep2;
       tuplet;
       resultfx;
-	  readln;
+      readln;
       mainmenu;
     end;
 
@@ -425,40 +425,40 @@ begin
       readln;
       mainmenu;
     end;
-
-	'4' :
-	begin
+    
+    '4' :
+    begin
       beep2;
       pref;
-	  readln;
-	  mainmenu;
-	end;
-
-	'5' :
-	begin
-	  about;
-	  readln;
-	  mainmenu;
-	end;
-
-	'6' :
-	begin
+      readln;
+      mainmenu;
+    end;
+    
+    '5' :
+    begin
+      about;
+      readln;
+      mainmenu;
+    end;
+    
+    '6' :
+    begin
       title;
       writeln;
       textcolor(green);
-	  writeln('Thank you for using this program!');
-	  music2;
-	end;
-	
-	else
-	begin
+      writeln('Thank you for using this program!');
+      music2;
+    end;
+    
+    else
+    begin
       textcolor(red);
       writeln('Wrong choice! Try again!');
-	  readln;
+      readln;
       warnfx;
       readln;
-	  mainmenu;
-	end;
+      mainmenu;
+    end;
   end;
 end;
 
